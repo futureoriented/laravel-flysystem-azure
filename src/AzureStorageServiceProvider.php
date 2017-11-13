@@ -19,7 +19,7 @@ class AzureStorageServiceProvider extends ServiceProvider
     {
         Storage::extend('azure', function ($app, $config) {
             $connectionString = sprintf('DefaultEndpointsProtocol=%s;AccountName=%s;AccountKey=%s;BlobEndpoint=%s',
-                $config['protocol'],
+                isset($config['protocol']) ? $config('protocol') : 'https',
                 $config['account']['name'],
                 $config['account']['key'],
                 $config['endpoint']['blob']
