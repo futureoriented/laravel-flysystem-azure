@@ -14,17 +14,19 @@ Laravel Azure blob storage service provider
 ]
 ```
 
+> If you are using Laravel >= 5.5, provider registration could be done by Laravel automaticly.
+
 - Register disk in `config/filesystem.php`.
 
 ```php
 'disks' => [
     'azure'  => [
-        'driver'    => 'azure',
-        'account'   => [
+        'driver' => 'azure',
+        'account' => [
             'name' => env('AZURE_ACCOUNT_NAME'),
-            'key'  => env('AZURE_ACCOUNT_KEY'),
+            'key' => env('AZURE_ACCOUNT_KEY'),
         ],
-        'blob-endpoint'  => env('AZURE_BLOB_ENDPOINT'),
+        'blob-endpoint' => env('AZURE_BLOB_ENDPOINT'),
         'container' => 'my-container'
     ]
 ]
@@ -34,23 +36,23 @@ You can register multiple azure containers with different disk names:
 
 ```php
 'disks' => [
-    'azure-reports'  => [
-        'driver'    => 'azure',
-        'account'   => [
+    'azure-reports' => [
+        'driver' => 'azure',
+        'account' => [
             'name' => env('AZURE_ACCOUNT_NAME'),
-            'key'  => env('AZURE_ACCOUNT_KEY'),
+            'key' => env('AZURE_ACCOUNT_KEY'),
         ],
-        'blob-endpoint'  => env('AZURE_BLOB_ENDPOINT'),
+        'blob-endpoint' => env('AZURE_BLOB_ENDPOINT'),
         'container' => 'reports'
     ],
     
-    'azure-images'  => [
-        'driver'    => 'azure',
-        'account'   => [
+    'azure-images' => [
+        'driver' => 'azure',
+        'account' => [
             'name' => env('AZURE_ACCOUNT_NAME'),
-            'key'  => env('AZURE_ACCOUNT_KEY'),
+            'key' => env('AZURE_ACCOUNT_KEY'),
         ],
-        'blob-endpoint'  => env('AZURE_BLOB_ENDPOINT'),
+        'blob-endpoint' => env('AZURE_BLOB_ENDPOINT'),
         'container' => 'images'
     ]
 ]
