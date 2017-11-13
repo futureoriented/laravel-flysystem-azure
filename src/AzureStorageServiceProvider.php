@@ -22,10 +22,9 @@ class AzureStorageServiceProvider extends ServiceProvider
                 isset($config['protocol']) ? $config('protocol') : 'https',
                 $config['account']['name'],
                 $config['account']['key'],
-                $config['endpoint']['blob']
+                $config['blob-endpoint']
             );
 
-            $config['container'] = 'visa-test';
             $proxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
             return new Filesystem(new AzureAdapter($proxy, $config['container']));
