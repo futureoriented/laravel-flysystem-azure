@@ -1,0 +1,37 @@
+{
+  "name": "futureoriented/laravel-flysystem-azure",
+  "description": "Laravel Azure storage service provider",
+  "keywords": [
+    "laravel",
+    "flysystem",
+    "azure"
+  ],
+  "authors": [
+    {
+      "name": "Wu Junchao",
+      "email": "zjuwujunchao@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.6.4",
+    "futureoriented/flysystem-azure-adapter": "~1.0.0",
+    "illuminate/support": "5.3.* || 5.4.* || 5.5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "FutureOriented\\LaravelFlysystemAzure\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "FutureOriented\\LaravelFlysystemAzure\\AzureStorageServiceProvider"
+      ]
+    }
+  }
+}
